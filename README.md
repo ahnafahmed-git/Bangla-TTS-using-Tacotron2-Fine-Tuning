@@ -4,11 +4,7 @@ Tacotron2 Text-to-Speech model fine-tuned using Comprehensive Bangla tts dataset
 **Bangla TTS Fine-Tuning: Model Documentation**
 
 Model Choice: Tacotron2
-Why Tacotron2: Tacotron2 was selected over VITS and FastSpeech2 for the following reasons:
 
-Pretrained English weights available via NVIDIA torch.hub, enabling transfer learning rather than training from scratch
-Uses the LJSpeech format natively — identical to this dataset's pipe-delimited transcript structure, requiring zero format conversion
-Well-documented architecture with a clear separation between the mel-spectrogram generator (Tacotron2) and vocoder (WaveGlow), making debugging and evaluation straightforward
 The Strategy pattern implemented in this project allows swapping to VITSStrategy in a single line if needed in future
 Architecture: Encoder (Conv + BiLSTM) → Location-Sensitive Attention → Autoregressive Decoder → Postnet (5-layer CNN) → Mel-Spectrogram → WaveGlow Vocoder → Audio
 
